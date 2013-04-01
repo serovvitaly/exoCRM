@@ -1,0 +1,29 @@
+{
+    "name": "extjs_project",
+    "settings": {},
+    "xdsVersion": "2.2.0",
+    "xdsBuild": 908,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000499,
+    "framework": "ext42",
+    "topInstanceFileMap": {
+        "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        }
+    },
+    "viewOrderMap": {
+        "view": [],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
