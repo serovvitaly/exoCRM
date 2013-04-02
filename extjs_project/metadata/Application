@@ -6,7 +6,40 @@
     },
     "codeClass": null,
     "userConfig": {
-        "name": "MyApp"
+        "id": null,
+        "models": [
+            "BulletinItem"
+        ],
+        "stores": [
+            "MainPanelStore",
+            "BulletinStore"
+        ],
+        "views": [
+            "MainViewport",
+            "MainPanel"
+        ],
+        "autoCreateViewport": true,
+        "controllers": [
+            "BaseController"
+        ],
+        "name": "CRM"
     },
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enabled": true,
+                "designer|userClassName": "Loader5",
+                "designer|displayName": "AppLoader",
+                "designer|createAlias": null
+            },
+            "designerId": "deb8772a-1dc1-4868-8c76-f136f6b6a839"
+        }
+    ]
 }

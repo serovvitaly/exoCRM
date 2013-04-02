@@ -1,0 +1,33 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BaseController"
+    },
+    "designerId": "35397ac0-ae2f-498c-94e2-31fbf26563ef",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "70209375-3474-4008-bcdd-96dfe6a4877f"
+        }
+    ]
+}

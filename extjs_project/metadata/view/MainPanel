@@ -1,0 +1,499 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "childEls": null,
+        "id": "MainPanel",
+        "designer|userClassName": "MainPanel",
+        "designer|userAlias": "mainpanel",
+        "designer|displayName": "MainPanel",
+        "headerPosition": null,
+        "overlapHeader": null,
+        "activeTab": 0,
+        "plain": true
+    },
+    "designerId": "b8c14a76-0efc-497e-abec-f773062e4e4b",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMainPanelRender",
+                "fn": "onMainPanelRender",
+                "implHandler": [
+                    "return;\r",
+                    "var tabs_model = Ext.create('CRM.store.MainPanelStore');\r",
+                    "\r",
+                    "tabs_model.addListener('load', function(store, records){\r",
+                    "    store.each(function(rec){\r",
+                    "\r",
+                    "        //rec.xtype = 'panel';\r",
+                    "\r",
+                    "        rec.data.items = [{xtype:'panel'}];\r",
+                    "\r",
+                    "        component.add(rec.data);\r",
+                    "    });\r",
+                    "});\r",
+                    ""
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "e6c47e73-1f5e-493d-8e81-ff325051a501"
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "hello",
+                "margin": null,
+                "designer|userClassName": "MyPanel",
+                "designer|displayName": "HomeTab",
+                "title": "#"
+            },
+            "configAlternates": {
+                "html": "string"
+            },
+            "designerId": "52622630-3013-4d1e-aedc-26ed938409f2",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "margin": "0 1 0 200",
+                        "padding": null,
+                        "designer|userClassName": "TabConfig",
+                        "iconCls": null,
+                        "tooltip": "Главная"
+                    },
+                    "configAlternates": {
+                        "tooltip": "string"
+                    },
+                    "designerId": "ceff54f7-0219-4f6f-abf8-ce1a37222a95"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyButton",
+                        "text": "MyButton"
+                    },
+                    "designerId": "5f603dda-f56b-49e7-a3f8-81a7a513ad39"
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": false,
+                "designer|userClassName": "MyPanel1",
+                "layout": "border",
+                "title": "База объявлений"
+            },
+            "designerId": "0637ae89-56ad-4216-8e79-41df90e2e7a1",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig1"
+                    },
+                    "designerId": "d8f75ddd-97e4-4c59-985b-2ccc4a94fcf8"
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "center",
+                        "designer|userClassName": "MyGridPanel",
+                        "designer|displayName": "BulletinGrid",
+                        "title": null,
+                        "store": "BulletinStore"
+                    },
+                    "designerId": "aa9edc29-eacc-4134-b309-888112d036b3",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn",
+                                "dataIndex": "id",
+                                "text": "ИД"
+                            },
+                            "designerId": "24e39257-69be-4a60-85ed-cf0d5b1e65f8"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyNumberColumn",
+                                "dataIndex": "title",
+                                "text": "Заголовок"
+                            },
+                            "designerId": "88c4954a-6f0b-4b79-996f-fed46e360aaf"
+                        },
+                        {
+                            "type": "Ext.grid.column.Date",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyDateColumn",
+                                "dataIndex": "created",
+                                "text": "Опубликовано"
+                            },
+                            "designerId": "e38768a8-42a7-4d4b-b990-9ddcc01d89d0"
+                        },
+                        {
+                            "type": "Ext.grid.column.Boolean",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyBooleanColumn",
+                                "dataIndex": "type",
+                                "text": "Тип"
+                            },
+                            "designerId": "7ca71f3c-41b5-4e2d-a833-2ca301404ff9"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn1",
+                                "dataIndex": "price",
+                                "text": "Цена"
+                            },
+                            "designerId": "b02d1938-4b2d-41da-b349-ca101e274046"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridView"
+                            },
+                            "designerId": "f1a8bb52-56e3-44af-a102-b97b353c2f5c"
+                        },
+                        {
+                            "type": "Ext.toolbar.Paging",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "width": 360,
+                                "designer|userClassName": "MyPagingToolbar",
+                                "displayInfo": true,
+                                "store": "BulletinStore"
+                            },
+                            "designerId": "3d3adb0b-18d1-45a0-a03d-08068de4903e"
+                        },
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top",
+                                "designer|userClassName": "MyToolbar"
+                            },
+                            "designerId": "4fa30cea-657a-405a-ab1d-3df010900559",
+                            "cn": [
+                                {
+                                    "type": "Ext.container.ButtonGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "width": null,
+                                        "designer|userClassName": "MyButtonGroup",
+                                        "defaults": [
+                                            "scale: 'medium'"
+                                        ],
+                                        "title": "Фильтр",
+                                        "columns": null
+                                    },
+                                    "designerId": "a0024ab2-be2b-4c84-9eb1-0b1e9edee103",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton2",
+                                                "scale": "medium",
+                                                "text": "Тип сделки"
+                                            },
+                                            "designerId": "2f9df451-fe96-4e9d-a93e-bbc61c2dd64a",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Menu",
+                                                    "reference": {
+                                                        "name": "menu",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyMenu1"
+                                                    },
+                                                    "designerId": "5b244a9a-f140-4810-a257-8cf2ec94bb90",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem2",
+                                                                "text": "Купля"
+                                                            },
+                                                            "designerId": "0e823e35-cd03-4878-aa9e-6996afb3bc75"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem3",
+                                                                "text": "Продажа"
+                                                            },
+                                                            "designerId": "15cad502-d520-40ea-ad4b-6e9aa49c1a27"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton1",
+                                                "scale": "medium",
+                                                "text": "Количество комнат"
+                                            },
+                                            "designerId": "2d2a909b-e275-4779-adcf-69b482a7649b",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Menu",
+                                                    "reference": {
+                                                        "name": "menu",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "MyMenu"
+                                                    },
+                                                    "designerId": "3e8de06b-b587-44ff-b985-396cec576c45",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem",
+                                                                "text": "1-а комнатные"
+                                                            },
+                                                            "designerId": "ba71ac98-14c5-44eb-830b-2296c407b26d"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem1",
+                                                                "text": "2-х комнатные"
+                                                            },
+                                                            "designerId": "bd3e54f1-4285-43d4-9309-c88d933f2394"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem4",
+                                                                "text": "3-х комнатные"
+                                                            },
+                                                            "designerId": "cd92d28d-5a4d-4d2e-980f-b9c39e3a5fe8"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem5",
+                                                                "text": "4-х комнатные"
+                                                            },
+                                                            "designerId": "e09f4ffa-e7a7-41f4-a34b-f742d78ff57d"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem6",
+                                                                "text": "5-ти комнатные"
+                                                            },
+                                                            "designerId": "2b61d1a7-040d-47ad-a90f-911f96227fc7"
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.CheckItem",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|userClassName": "MyCheckItem7",
+                                                                "text": "> 5-ти комнатные"
+                                                            },
+                                                            "designerId": "0b095d17-4ed5-4fb4-8b27-1a914d0c495e"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton3",
+                                                "scale": "medium",
+                                                "text": "Применить фильтр"
+                                            },
+                                            "designerId": "a85f79a6-5a1a-4d19-9dc2-3ba81b965fa9"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton4",
+                                                "scale": "medium",
+                                                "text": "Сохранить фильтр"
+                                            },
+                                            "designerId": "7ea82a92-ddc1-4f13-adb9-0a78cfabca81"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "east",
+                        "layout|split": true,
+                        "width": 400,
+                        "designer|userClassName": "MyPanel2",
+                        "designer|displayName": "SidePanel",
+                        "collapsed": false,
+                        "collapsible": true,
+                        "header": false,
+                        "title": null
+                    },
+                    "designerId": "53fc4c1d-8c84-4548-be2b-58f7432640f0"
+                }
+            ]
+        }
+    ]
+}

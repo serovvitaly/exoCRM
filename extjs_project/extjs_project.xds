@@ -1,6 +1,14 @@
 {
     "name": "extjs_project",
-    "settings": {},
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "http://crm/",
+        "exportPath": "D:/OpenServer/domains/exoCRM/public",
+        "buildShouldOverwriteIndex": true
+    },
     "xdsVersion": "2.2.0",
     "xdsBuild": 908,
     "schemaVersion": 1,
@@ -12,13 +20,72 @@
                 "metadata/resource/Library"
             ],
             "className": "Library"
+        },
+        "7a8a7bd1-4258-4c10-8280-a0966721a96c": {
+            "paths": [
+                "metadata/view/MainViewport",
+                "app/view/override/MainViewport.js",
+                "app/view/MainViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MainViewport"
+        },
+        "35397ac0-ae2f-498c-94e2-31fbf26563ef": {
+            "paths": [
+                "metadata/controller/BaseController",
+                "app/controller/override/BaseController.js",
+                "app/controller/BaseController.js"
+            ],
+            "className": "BaseController"
+        },
+        "99b30929-7023-4166-977c-53e570b8e43f": {
+            "paths": [
+                "metadata/store/MainPanelStore",
+                "app/store/override/MainPanelStore.js",
+                "app/store/MainPanelStore.js"
+            ],
+            "className": "MainPanelStore"
+        },
+        "b8c14a76-0efc-497e-abec-f773062e4e4b": {
+            "paths": [
+                "metadata/view/MainPanel",
+                "app/view/override/MainPanel.js",
+                "app/view/MainPanel.js"
+            ],
+            "className": "MainPanel"
+        },
+        "82bbe149-9668-45e2-a4b6-41633527e0ea": {
+            "paths": [
+                "metadata/store/BulletinStore",
+                "app/store/override/BulletinStore.js",
+                "app/store/BulletinStore.js"
+            ],
+            "className": "BulletinStore"
+        },
+        "115ea995-aa8b-4235-9c9c-e5f94a72deeb": {
+            "paths": [
+                "metadata/model/BulletinItem",
+                "app/model/override/BulletinItem.js",
+                "app/model/BulletinItem.js"
+            ],
+            "className": "BulletinItem"
         }
     },
     "viewOrderMap": {
-        "view": [],
-        "store": [],
-        "controller": [],
-        "model": [],
+        "view": [
+            "7a8a7bd1-4258-4c10-8280-a0966721a96c",
+            "b8c14a76-0efc-497e-abec-f773062e4e4b"
+        ],
+        "store": [
+            "99b30929-7023-4166-977c-53e570b8e43f",
+            "82bbe149-9668-45e2-a4b6-41633527e0ea"
+        ],
+        "controller": [
+            "35397ac0-ae2f-498c-94e2-31fbf26563ef"
+        ],
+        "model": [
+            "115ea995-aa8b-4235-9c9c-e5f94a72deeb"
+        ],
         "resource": [
             "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1"
         ],

@@ -19,20 +19,6 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    models: [
-        'BulletinItem'
-    ],
-    stores: [
-        'MainPanelStore',
-        'BulletinStore'
-    ],
-    views: [
-        'MainViewport',
-        'MainPanel'
-    ],
     autoCreateViewport: true,
-    controllers: [
-        'BaseController'
-    ],
-    name: 'CRM'
+    name: 'Bulletin'
 });

@@ -5,5 +5,8 @@
         "type": "array"
     },
     "codeClass": null,
+    "userConfig": {
+        "theme": null
+    },
     "designerId": "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1"
 }

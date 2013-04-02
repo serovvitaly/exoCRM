@@ -1,0 +1,48 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "style": "background: #273C52",
+        "designer|userClassName": "MainViewport",
+        "designer|initialView": true,
+        "layout": "border"
+    },
+    "configAlternates": {
+        "style": "string"
+    },
+    "designerId": "7a8a7bd1-4258-4c10-8280-a0966721a96c",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "north",
+                "height": 50,
+                "designer|userClassName": "MyContainer",
+                "designer|displayName": "TopContainer"
+            },
+            "designerId": "59074172-bb36-4ffe-8c6d-ca255f53b6c6"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center"
+            },
+            "designerId": "5bcf5382-6bf6-4475-83fa-995315082221",
+            "masterInstanceId": "b8c14a76-0efc-497e-abec-f773062e4e4b"
+        }
+    ]
+}
