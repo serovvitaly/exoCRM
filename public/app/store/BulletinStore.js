@@ -24,6 +24,7 @@ Ext.define('CRM.store.BulletinStore', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            autoLoad: true,
             model: 'CRM.model.BulletinItem',
             storeId: 'MyJsonStore1',
             proxy: {

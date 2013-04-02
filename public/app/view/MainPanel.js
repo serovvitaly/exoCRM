@@ -67,9 +67,10 @@ Ext.define('CRM.view.MainPanel', {
                                     text: 'ИД'
                                 },
                                 {
-                                    xtype: 'numbercolumn',
+                                    xtype: 'gridcolumn',
                                     dataIndex: 'title',
-                                    text: 'Заголовок'
+                                    text: 'Заголовок',
+                                    flex: 1
                                 },
                                 {
                                     xtype: 'datecolumn',
@@ -158,13 +159,21 @@ Ext.define('CRM.view.MainPanel', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    iconCls: 'btn-filter-apply',
                                                     scale: 'medium',
                                                     text: 'Применить фильтр'
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    iconCls: 'btn-filter-save',
                                                     scale: 'medium',
                                                     text: 'Сохранить фильтр'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    iconCls: 'btn-filter-load',
+                                                    scale: 'medium',
+                                                    text: 'Загрузить фильтр'
                                                 }
                                             ]
                                         }

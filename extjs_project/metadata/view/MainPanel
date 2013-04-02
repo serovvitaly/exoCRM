@@ -160,18 +160,19 @@
                             "designerId": "24e39257-69be-4a60-85ed-cf0d5b1e65f8"
                         },
                         {
-                            "type": "Ext.grid.column.Number",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyNumberColumn",
+                                "designer|userClassName": "MyColumn2",
                                 "dataIndex": "title",
-                                "text": "Заголовок"
+                                "text": "Заголовок",
+                                "flex": 1
                             },
-                            "designerId": "88c4954a-6f0b-4b79-996f-fed46e360aaf"
+                            "designerId": "e3257051-f904-49c9-93f9-b8c2c4c75f46"
                         },
                         {
                             "type": "Ext.grid.column.Date",
@@ -448,6 +449,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton3",
+                                                "iconCls": "btn-filter-apply",
                                                 "scale": "medium",
                                                 "text": "Применить фильтр"
                                             },
@@ -462,10 +464,27 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton4",
+                                                "iconCls": "btn-filter-save",
                                                 "scale": "medium",
                                                 "text": "Сохранить фильтр"
                                             },
                                             "designerId": "7ea82a92-ddc1-4f13-adb9-0a78cfabca81"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton5",
+                                                "icon": null,
+                                                "iconCls": "btn-filter-load",
+                                                "scale": "medium",
+                                                "text": "Загрузить фильтр"
+                                            },
+                                            "designerId": "5e23371d-56e9-40af-bb83-65c0b6bc4b29"
                                         }
                                     ]
                                 }

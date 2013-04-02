@@ -5,9 +5,17 @@ class Ext_Bulletin_Controller extends Ext_Controller
     
     public function action_list()
     {
+        
+        $page  = Input::get('page', 1);
+        $start = Input::get('start', 0);
+        $limit = Input::get('limit', 50);
+        
+        
         $rows = array();
         
-        $adverts = Advert::take(20)->get();
+        $total   = Advert::count();
+        
+        $adverts = Advert::take($limit)->skip($start)->get(); 
         
         if (count($adverts) > 0) {
             foreach ($adverts AS $advert) {
@@ -22,7 +30,8 @@ class Ext_Bulletin_Controller extends Ext_Controller
         
         return json_encode(array(
             'success' => true,
-            'rows' => $rows
+            'rows'    => $rows,
+            'total'   => $total
         ));
     }
     
