@@ -35,4 +35,10 @@ class Ext_Bulletin_Controller extends Ext_Controller
         ));
     }
     
+    
+    public function action_map()
+    {
+        return View::make('bulletin.map');
+    }
+    
 }

@@ -79,6 +79,7 @@
                         "margin": "0 1 0 200",
                         "padding": null,
                         "designer|userClassName": "TabConfig",
+                        "glyph": null,
                         "iconCls": null,
                         "tooltip": "Главная"
                     },
@@ -449,7 +450,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton3",
-                                                "iconCls": "btn-filter-apply",
+                                                "iconCls": null,
                                                 "scale": "medium",
                                                 "text": "Применить фильтр"
                                             },
@@ -464,7 +465,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton4",
-                                                "iconCls": "btn-filter-save",
+                                                "iconCls": null,
                                                 "scale": "medium",
                                                 "text": "Сохранить фильтр"
                                             },
@@ -480,7 +481,7 @@
                                             "userConfig": {
                                                 "designer|userClassName": "MyButton5",
                                                 "icon": null,
-                                                "iconCls": "btn-filter-load",
+                                                "iconCls": null,
                                                 "scale": "medium",
                                                 "text": "Загрузить фильтр"
                                             },
@@ -489,6 +490,25 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridpanelSelectionChange",
+                                "fn": "onGridpanelSelectionChange",
+                                "implHandler": [
+                                    "\r",
+                                    "console.log(selected[0].data);"
+                                ],
+                                "name": "selectionchange",
+                                "scope": "me"
+                            },
+                            "designerId": "9a685d0c-032a-4da1-bb1a-3cf4d3e90ae5"
                         }
                     ]
                 },
@@ -502,15 +522,165 @@
                     "userConfig": {
                         "layout|region": "east",
                         "layout|split": true,
+                        "border": false,
                         "width": 400,
                         "designer|userClassName": "MyPanel2",
                         "designer|displayName": "SidePanel",
+                        "layout": "border",
                         "collapsed": false,
                         "collapsible": true,
                         "header": false,
                         "title": null
                     },
-                    "designerId": "53fc4c1d-8c84-4548-be2b-58f7432640f0"
+                    "designerId": "53fc4c1d-8c84-4548-be2b-58f7432640f0",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "center",
+                                "designer|userClassName": "MyPanel3",
+                                "header": false,
+                                "title": "My Panel"
+                            },
+                            "designerId": "239fae2a-8702-4828-8835-01a43c3b9175"
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|region": "south",
+                                "layout|split": true,
+                                "height": 300,
+                                "html": "<div id=\"bsingle-map\"></div>",
+                                "designer|userClassName": "MyPanel4",
+                                "designer|displayName": "sideMap",
+                                "collapsible": true,
+                                "title": "Карта"
+                            },
+                            "configAlternates": {
+                                "html": "string"
+                            },
+                            "designerId": "5d1cc87e-3e40-49a9-b88b-942e552f8a42",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onPanelAfterRender1",
+                                        "fn": "onPanelAfterRender1",
+                                        "implHandler": [
+                                            "\r",
+                                            "return;\r",
+                                            "\r",
+                                            "var mpanel = document.getElementById('panel-1056');\r",
+                                            "\r",
+                                            "var map_element = document.getElementById('bsingle-map');\r",
+                                            "\r",
+                                            "map_element.style.height = mpanel.style.height;\r",
+                                            "map_element.style.width  = mpanel.style.width;\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "// Создание экземпляра карты и его привязка к контейнеру с\r",
+                                            "// заданным id (\"map\")\r",
+                                            "var myMap = new ymaps.Map('bullet-ymap', {\r",
+                                            "    // При инициализации карты, обязательно нужно указать\r",
+                                            "    // ее центр и коэффициент масштабирования\r",
+                                            "    center: [55.76, 37.64], // Москва\r",
+                                            "    zoom: 10\r",
+                                            "});"
+                                        ],
+                                        "name": "afterrender",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "a1ae8447-5f37-4e24-9dd7-2b42bde4e86c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "loader": [
+                    "{\r",
+                    "    url: '/ext/bulletin/map',\r",
+                    "    autoLoad: true\r",
+                    "}"
+                ],
+                "width": 150,
+                "designer|userClassName": "MyPanel5",
+                "title": "Карта"
+            },
+            "designerId": "bb7175b6-2df1-4476-a0d3-4d0f4507f64c",
+            "cn": [
+                {
+                    "type": "Ext.tab.Tab",
+                    "reference": {
+                        "name": "tabConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "TabConfig2"
+                    },
+                    "designerId": "4169ec0f-d8a9-4180-b557-ec893703e06f"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onPanelAfterRender",
+                        "fn": "onPanelAfterRender",
+                        "implHandler": [
+                            "\r",
+                            "var mpanel = document.getElementById('MainPanel-body');\r",
+                            "\r",
+                            "var map_element = document.getElementById('bullet-ymap');\r",
+                            "\r",
+                            "map_element.style.height = mpanel.style.height;\r",
+                            "map_element.style.width  = mpanel.style.width;\r",
+                            "\r",
+                            "\r",
+                            "\r",
+                            "// Создание экземпляра карты и его привязка к контейнеру с\r",
+                            "// заданным id (\"map\")\r",
+                            "var myMap = new ymaps.Map('bullet-ymap', {\r",
+                            "    // При инициализации карты, обязательно нужно указать\r",
+                            "    // ее центр и коэффициент масштабирования\r",
+                            "    center: [55.76, 37.64], // Москва\r",
+                            "    zoom: 14\r",
+                            "});\r",
+                            ""
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "designerId": "dd367e59-394f-4337-a5a6-3127cac407bc"
                 }
             ]
         }

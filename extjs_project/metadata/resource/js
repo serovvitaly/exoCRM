@@ -1,0 +1,12 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"
+    },
+    "designerId": "17892c7c-08a6-4d7e-b563-13d2058b6e76"
+}

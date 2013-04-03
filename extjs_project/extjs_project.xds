@@ -69,6 +69,12 @@
                 "app/model/BulletinItem.js"
             ],
             "className": "BulletinItem"
+        },
+        "17892c7c-08a6-4d7e-b563-13d2058b6e76": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
         }
     },
     "viewOrderMap": {
@@ -87,7 +93,8 @@
             "115ea995-aa8b-4235-9c9c-e5f94a72deeb"
         ],
         "resource": [
-            "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1"
+            "f8dcdc0d-ad5e-4b9f-918c-e250d5df74a1",
+            "17892c7c-08a6-4d7e-b563-13d2058b6e76"
         ],
         "app": [
             "application"

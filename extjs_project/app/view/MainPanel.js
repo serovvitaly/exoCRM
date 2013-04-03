@@ -159,19 +159,16 @@ Ext.define('CRM.view.MainPanel', {
                                                 },
                                                 {
                                                     xtype: 'button',
-                                                    iconCls: 'btn-filter-apply',
                                                     scale: 'medium',
                                                     text: 'Применить фильтр'
                                                 },
                                                 {
                                                     xtype: 'button',
-                                                    iconCls: 'btn-filter-save',
                                                     scale: 'medium',
                                                     text: 'Сохранить фильтр'
                                                 },
                                                 {
                                                     xtype: 'button',
-                                                    iconCls: 'btn-filter-load',
                                                     scale: 'medium',
                                                     text: 'Загрузить фильтр'
                                                 }
@@ -179,18 +176,66 @@ Ext.define('CRM.view.MainPanel', {
                                         }
                                     ]
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                selectionchange: {
+                                    fn: me.onGridpanelSelectionChange,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'panel',
                             region: 'east',
                             split: true,
+                            border: false,
                             width: 400,
+                            layout: {
+                                type: 'border'
+                            },
                             collapsed: false,
                             collapsible: true,
-                            header: false
+                            header: false,
+                            items: [
+                                {
+                                    xtype: 'panel',
+                                    region: 'center',
+                                    header: false,
+                                    title: 'My Panel'
+                                },
+                                {
+                                    xtype: 'panel',
+                                    region: 'south',
+                                    split: true,
+                                    height: 300,
+                                    html: '<div id="bsingle-map"></div>',
+                                    collapsible: true,
+                                    title: 'Карта',
+                                    listeners: {
+                                        afterrender: {
+                                            fn: me.onPanelAfterRender1,
+                                            scope: me
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     ]
+                },
+                {
+                    xtype: 'panel',
+                    loader: {
+                        url: '/ext/bulletin/map',
+                        autoLoad: true
+                    },
+                    width: 150,
+                    title: 'Карта',
+                    listeners: {
+                        afterrender: {
+                            fn: me.onPanelAfterRender,
+                            scope: me
+                        }
+                    }
                 }
             ]
         });
@@ -211,6 +256,56 @@ Ext.define('CRM.view.MainPanel', {
 
                 component.add(rec.data);
             });
+        });
+
+    },
+
+    onGridpanelSelectionChange: function(model, selected, eOpts) {
+
+        console.log(selected[0].data);
+    },
+
+    onPanelAfterRender1: function(component, eOpts) {
+
+        return;
+
+        var mpanel = document.getElementById('panel-1056');
+
+        var map_element = document.getElementById('bsingle-map');
+
+        map_element.style.height = mpanel.style.height;
+        map_element.style.width  = mpanel.style.width;
+
+
+
+        // Создание экземпляра карты и его привязка к контейнеру с
+        // заданным id ("map")
+        var myMap = new ymaps.Map('bullet-ymap', {
+            // При инициализации карты, обязательно нужно указать
+            // ее центр и коэффициент масштабирования
+            center: [55.76, 37.64], // Москва
+            zoom: 10
+        });
+    },
+
+    onPanelAfterRender: function(component, eOpts) {
+
+        var mpanel = document.getElementById('MainPanel-body');
+
+        var map_element = document.getElementById('bullet-ymap');
+
+        map_element.style.height = mpanel.style.height;
+        map_element.style.width  = mpanel.style.width;
+
+
+
+        // Создание экземпляра карты и его привязка к контейнеру с
+        // заданным id ("map")
+        var myMap = new ymaps.Map('bullet-ymap', {
+            // При инициализации карты, обязательно нужно указать
+            // ее центр и коэффициент масштабирования
+            center: [55.76, 37.64], // Москва
+            zoom: 14
         });
 
     }
